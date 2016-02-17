@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setText("Usuario");
 
-        jLabel2.setText("Contraseña");
+        jLabel2.setText("Password");
 
         jButton1.setText("Enviar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
