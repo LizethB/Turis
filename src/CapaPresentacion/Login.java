@@ -121,6 +121,8 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(118, Short.MAX_VALUE))
         );
 
+        jLabel1.getAccessibleContext().setAccessibleName("Usuarios");
+
         desktop.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 557, -1));
 
         jMenuBar1.setBackground(new java.awt.Color(3, 169, 244));
