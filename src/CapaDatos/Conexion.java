@@ -18,7 +18,7 @@ public class Conexion {
     
     static Connection cn=null;
     public static Connection Conexi(Connection cn) throws SQLException{
-        String ruta="";
+        String ruta="turismo.sqlite";
         try{
          Class.forName("org.sqlite.JDBC");  
          cn=DriverManager.getConnection("jdbc:sqlite:"+ruta);
