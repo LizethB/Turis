@@ -10,12 +10,12 @@ package CapaPresentacion;
  *
  * @author erika_penaranda
  */
-public class inventario extends javax.swing.JPanel {
+public class servicio extends javax.swing.JPanel {
 
     /**
-     * Creates new form inventario
+     * Creates new form servicio
      */
-    public inventario() {
+    public servicio() {
         initComponents();
     }
 
@@ -28,17 +28,17 @@ public class inventario extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(153, 0, 153));
+        setBackground(new java.awt.Color(255, 0, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 426, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 439, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

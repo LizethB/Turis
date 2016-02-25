@@ -6,19 +6,35 @@
 
 package CapaPresentacion;
 
-import static java.awt.SystemColor.desktop;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
 /**
  *
  * @author erika_penaranda
  */
 public class ventana extends javax.swing.JFrame {
+GridBagLayout layout = new GridBagLayout();
+inventario inventarioPanel;
+servicio servicioPanel;
 
     /**
      * Creates new form ventana
      */
     public ventana() {
         initComponents();
+         inventarioPanel = new inventario();
+        servicioPanel = new servicio();
+        jPanel1.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx=0;
+        c.gridy=0;
+        jPanel1.add(inventarioPanel,c);
+        c.gridx=0;
+        c.gridy=0;
+        jPanel1.add(servicioPanel,c);
+        inventarioPanel.setVisible(true);
+        servicioPanel.setVisible(false);
     }
 
     /**
@@ -34,8 +50,6 @@ public class ventana extends javax.swing.JFrame {
         inventariobtn = new java.awt.Button();
         button1 = new java.awt.Button();
         jPanel1 = new javax.swing.JPanel();
-        label1 = new java.awt.Label();
-        textField1 = new java.awt.TextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -76,34 +90,20 @@ public class ventana extends javax.swing.JFrame {
                 .addComponent(inventariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(331, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        label1.setText("inventario");
-
-        textField1.setText("textField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(226, Short.MAX_VALUE))
+            .addGap(0, 737, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(289, Short.MAX_VALUE))
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -128,16 +128,11 @@ public class ventana extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(524, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(212, 212, 212)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -152,16 +147,16 @@ public class ventana extends javax.swing.JFrame {
 
     private void inventariobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventariobtnActionPerformed
         // TODO add your handling code here:
-        inventario i = new inventario();
-        label1.setVisible(true);
-        textField1.setVisible(false);
+       
+        inventarioPanel.setVisible(true);
+     servicioPanel.setVisible(false);
 
     }//GEN-LAST:event_inventariobtnActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
-         label1.setVisible(false);
-        textField1.setVisible(true);
+         inventarioPanel.setVisible(false);
+        servicioPanel.setVisible(true);
     }//GEN-LAST:event_button1ActionPerformed
 
     /**
@@ -207,7 +202,5 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private java.awt.Label label1;
-    private java.awt.TextField textField1;
     // End of variables declaration//GEN-END:variables
 }
