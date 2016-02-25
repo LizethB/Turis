@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class Conexion {
     
     static Connection cn=null;
-    public static Connection Conexi(Connection cn) throws SQLException{
+    public static Connection Conexi() throws SQLException{
         String ruta="turismo.sqlite";
         try{
          Class.forName("org.sqlite.JDBC");  
