@@ -17,6 +17,7 @@ public class ventana extends javax.swing.JFrame {
 GridBagLayout layout = new GridBagLayout();
 inventario inventarioPanel;
 servicio servicioPanel;
+contable contablePanel;
 
     /**
      * Creates new form ventana
@@ -25,6 +26,7 @@ servicio servicioPanel;
         initComponents();
          inventarioPanel = new inventario();
         servicioPanel = new servicio();
+        contablePanel=new contable();
         jPanel3.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx=0;
@@ -33,8 +35,12 @@ servicio servicioPanel;
         c.gridx=0;
         c.gridy=0;
         jPanel3.add(servicioPanel,c);
+        c.gridx=0;
+        c.gridy=0;
+        jPanel3.add(contablePanel,c);
         inventarioPanel.setVisible(false);
         servicioPanel.setVisible(false);
+        contablePanel.setVisible(false);
     }
 
     /**
@@ -49,6 +55,7 @@ servicio servicioPanel;
         jPanel2 = new javax.swing.JPanel();
         inventariobtn = new java.awt.Button();
         button1 = new java.awt.Button();
+        btcontable = new java.awt.Button();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -65,11 +72,24 @@ servicio servicioPanel;
                 inventariobtnActionPerformed(evt);
             }
         });
+        inventariobtn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inventariobtnKeyTyped(evt);
+            }
+        });
 
-        button1.setLabel("servicio");
+        button1.setLabel("Servicio");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
+            }
+        });
+
+        btcontable.setActionCommand("Contable");
+        btcontable.setLabel("Contable");
+        btcontable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcontableActionPerformed(evt);
             }
         });
 
@@ -91,10 +111,14 @@ servicio servicioPanel;
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inventariobtn, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inventariobtn, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                    .addComponent(btcontable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(117, 117, 117)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -106,9 +130,13 @@ servicio servicioPanel;
                 .addComponent(inventariobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(btcontable, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        btcontable.getAccessibleContext().setAccessibleName("Contable");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -165,6 +193,7 @@ servicio servicioPanel;
        
         inventarioPanel.setVisible(true);
      servicioPanel.setVisible(false);
+     contablePanel.setVisible(false);
 
     }//GEN-LAST:event_inventariobtnActionPerformed
 
@@ -172,7 +201,19 @@ servicio servicioPanel;
         // TODO add your handling code here:
          inventarioPanel.setVisible(false);
         servicioPanel.setVisible(true);
+        contablePanel.setVisible(false);
     }//GEN-LAST:event_button1ActionPerformed
+
+    private void inventariobtnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inventariobtnKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inventariobtnKeyTyped
+
+    private void btcontableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcontableActionPerformed
+        // TODO add your handling code here:
+        inventarioPanel.setVisible(false);
+        servicioPanel.setVisible(false);
+        contablePanel.setVisible(true);
+    }//GEN-LAST:event_btcontableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,6 +251,7 @@ servicio servicioPanel;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button btcontable;
     private java.awt.Button button1;
     private java.awt.Button inventariobtn;
     private javax.swing.JMenu jMenu1;
