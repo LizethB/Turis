@@ -8,6 +8,7 @@ package CapaPresentacion;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 
 /**
  *
@@ -27,8 +28,8 @@ contable contablePanel;
          inventarioPanel = new inventario();
         servicioPanel = new servicio();
         contablePanel=new contable();
-        jPanel3.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
+        jPanel3.setLayout(layout);
         c.gridx=0;
         c.gridy=0;
         jPanel3.add(inventarioPanel,c);
@@ -136,8 +137,6 @@ contable contablePanel;
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        btcontable.getAccessibleContext().setAccessibleName("Contable");
-
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -191,7 +190,7 @@ contable contablePanel;
     private void inventariobtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventariobtnActionPerformed
         // TODO add your handling code here:
        
-        inventarioPanel.setVisible(true);
+     inventarioPanel.setVisible(true);
      servicioPanel.setVisible(false);
      contablePanel.setVisible(false);
 
