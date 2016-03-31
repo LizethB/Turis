@@ -19,8 +19,8 @@ import java.sql.Statement;
 public class Crud_Inventario {
     
     
-    public void Insertar_inventario(){
-    
+    public void Insertar_inventario(Inventario obj){
+   
     }
     
     public void Actualizar_inventrio(){

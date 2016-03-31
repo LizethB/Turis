@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package CapaPresentacion;
-
+import CapaNegocio.ValidaInventario;
+import CapaDatos.Inventario;
 /**
  *
  * @author NAYO
@@ -118,6 +119,13 @@ public class FormularioInventario extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Inventario obj= new Inventario();
+        ValidaInventario valida= new ValidaInventario();
+        obj.setNombre(this.jTextField1.getText());
+        obj.setDescripcion(this.jTextField2.getText());
+        obj.setCantidad(Integer.parseInt(this.jTextField3.getText()));
+        
+        valida.valida_insertar(obj);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
