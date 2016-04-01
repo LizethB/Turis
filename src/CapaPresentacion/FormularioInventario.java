@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package CapaPresentacion;
-import CapaNegocio.ValidaInventario;
 import CapaDatos.Inventario;
+import CapaNegocio.ValidaInventario;
+import javax.swing.JOptionPane;
 /**
  *
  * @author NAYO
@@ -47,6 +48,12 @@ public class FormularioInventario extends javax.swing.JDialog {
         jLabel2.setText("Descripcion:");
 
         jLabel3.setText("Cantidad:");
+
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3KeyTyped(evt);
+            }
+        });
 
         jButton1.setText("Enviar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +135,16 @@ public class FormularioInventario extends javax.swing.JDialog {
         valida.valida_insertar(obj);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+// TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(c<'0'|| c>'9') {
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "SOLO NUMEROS EN ESTE CAMPO",
+  "WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);    
+        }
+    }//GEN-LAST:event_jTextField3KeyTyped
 
     /**
      * @param args the command line arguments
